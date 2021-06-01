@@ -1,0 +1,24 @@
+<div class="m-5">
+    <div class="float-start">
+        <img src="assets/img/{{instrumento.imagen}}" style="min-height: 300px;">
+        <p></p>
+        <p class="fs-6">Descripción:</p>
+        <p class="fs-6" style="max-width: 450px;">{{instrumento.descripcion}}</p>
+    </div>
+    <div class="vertical-line mx-3" style="height: 500px;"></div>
+    <div>
+        <p class="fs-6">{{instrumento.cantidadVendida}} vendidos</p>
+        <p class="fs-4">{{instrumento.instrumento}}</p>
+        <p class="fs-1 fw-light">$ {{instrumento.precio}}</p>
+        <p class="fs-6">Marca: {{instrumento.marca}}<br>Modelo: {{instrumento.modelo}}</p>
+        <div class="fs-6">Costo envío:
+            <br>
+            <p class="fs-6 fw-normal" *ngIf="instrumento.costoEnvio == 'G'; else mostrarcosto" style="color: limegreen;"><img src="assets/img/camion.png">Envío gratis</p>
+            <ng-template #mostrarcosto><p class="fs-6 fw-normal" style="color: darkorange;">${{instrumento.costoEnvio}}</p></ng-template>
+        </div>
+    </div> 
+    <br>
+    <button type="button" class="btn btn-outline-primary">Agregar al carrito</button>
+</div>
+
+

@@ -1,0 +1,12 @@
+<ul class="list-group list-group-flush animated fadeIn fast">
+  <li class="list-group-item" *ngFor="let producto of productos; let i = index">
+    <br>  
+    <img class="mx-5 float-start" src="assets/img/{{producto.imagen}}" style="max-height: 150px;" (click)="verInstrumento(producto.id)">
+    <p class="fs-4 fw-light">{{producto.instrumento}}</p>
+      <h2>$ {{producto.precio}}</h2>
+      <p class="fs-6 fw-normal" *ngIf="producto.costoEnvio == 'G'; else mostrarcosto" style="color: limegreen;"><img src="assets/img/camion.png">Envío gratis a todo el país</p>
+      <ng-template #mostrarcosto><p class="fs-6 fw-normal" style="color: darkorange;">Costo de envío interior de Argentina: ${{producto.costoEnvio}}</p></ng-template>
+      <p class="fs-6 fw-normal">{{producto.cantidadVendida}} vendidos</p>
+      <br>   
+  </li>
+</ul>

@@ -1,0 +1,6 @@
+div.vertical-line {
+    width: 1px;
+    background-color: lightgrey;
+    height: 100%;
+    float: left;
+}
